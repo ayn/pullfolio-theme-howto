@@ -1,6 +1,6 @@
 Pullfolio.com Themes Howto
 ================================
-This repository contains examples of how [Pullfolio](http://pullfolio.com) custom themes work. After upgrading to a **trial** or purchasing a **pro** subscription, you will be able to clone one of the provided themes and modify from there, or create a new theme from scratch (only recommended for experts!). You have complete control of the look and feel of your Pullfolio site by customizing the theme files.
+This repository provides information of how [Pullfolio](http://pullfolio.com) custom themes work. After upgrading to a **trial** or purchasing a **pro** subscription, you will be able to clone one of the provided themes and modify from there, or create a new theme from scratch (only recommended for experts!). You have complete control of the look and feel of your Pullfolio site by customizing the theme files.
 
 Overview on theme directory structure
 -------------------------------------
