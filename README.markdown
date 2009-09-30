@@ -79,6 +79,10 @@ signature-on-black-without-filters
 
 This is the same signature-on-black theme with a re-written _portfolio.liquid_ to show how to go through the photos of the portfolio to generate the HTML block.
 
+Useful links
+============
+  * [Liquid Templating Language](http://www.liquidmarkup.org/) - you can learn all about Liquid here
+
 Contributors
 ============
   * [Raymond Law](http://rayvinly.com)
