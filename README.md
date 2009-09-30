@@ -47,7 +47,7 @@ In all pages, you have access to the follow variables:
   * _photos_ - essentially the same as portfolio.photos, you would typically use a for loop to list all of them in *portfolio.liquid*, each of these photos contains:
     * _title_ - title of image
     * _description_ - photo description
-    * _photopage_url_ - this is the URL to the Flickr photopage, to satisfy (Flickr's guidelines)[http://www.flickr.com/guidelines.gne], you must include a link back to Flickr when you display any image off of Flickr
+    * _photopage_url_ - this is the URL to the Flickr photopage, to satisfy [Flickr's guidelines](http://www.flickr.com/guidelines.gne), you must include a link back to Flickr when you display any image off of Flickr
     * *url_square*, *url_thumbnail*, *url_small*, *url_medium*, *url_original* - URLs to different sizes of the image
     * *url_large* - provides URL to the large size image if available, otherwise, it returns URL to the medium
 
