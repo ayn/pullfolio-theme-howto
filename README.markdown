@@ -50,8 +50,8 @@ In all pages, you have access to the follow variables:
     * _title_ - title of image
     * _description_ - photo description
     * _photopage_url_ - this is the URL to the Flickr photopage, to satisfy (Flickr's guidelines)[http://www.flickr.com/guidelines.gne], you must include a link back to Flickr when you display any image off of Flickr
-    * *url_square*, *url_thumbnail*, *url_small*, *url_medium*, *url_large*, *url_original* - URLs to different sizes of the image
-    * *url_l* - this is set if this photo has a valid large version, Flickr photos do not always have a valid large version as it depends on the original resolutions of the photos
+    * *url_square*, *url_thumbnail*, *url_small*, *url_medium*, *url_original* - URLs to different sizes of the image
+    * *url_large* - provides URL to the large size image if available, otherwise, it returns URL to the medium
 
   * in _contact.liquid_, you have access to:
     * *@contact_form* - if you display this instance variable it will include a email contact form, you can style it with CSS if you so desire

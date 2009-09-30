@@ -12,7 +12,7 @@
     <ul class="thumbs noscript">
       {% for photo in photos %}
         <li>
-          <a class="thumb" href="{{ photo.url_l || photo.url_medium }}" title="{{ photo.title }}">
+          <a class="thumb" href="{{ photo.url_large }}" title="{{ photo.title }}">
             <img src="{{ photo.url_square }}" alt="{{ photo.title }}" />
           </a>
           <div class="caption">
