@@ -96,7 +96,7 @@ This is the same signature-on-black theme with a re-written _portfolio.liquid_ t
 
 Download
 --------
-You can download this project in either [zip](http://github.com/ayn/pullfolio-theme-howto/zipball/master) or [tar](http://github.com/ayn/pullfolio-theme-howto/tarball/master) formats:
+You can download these theme examples in either [zip](http://github.com/ayn/pullfolio-theme-howto/zipball/master) or [tar](http://github.com/ayn/pullfolio-theme-howto/tarball/master) formats:
 
 <div class="download">
   <a href="http://github.com/ayn/pullfolio-theme-howto/zipball/master">
