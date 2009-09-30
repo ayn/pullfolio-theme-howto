@@ -72,7 +72,7 @@ Example Themes
 ==============
 signature-on-black
 ------------------
-This is the code of our _Signature on Black_ theme, it uses our helpers (aka Liquid filters) to provide optimized performance by utility MemCached.
+This is the code of our _Signature on Black_ theme, it uses our helpers (aka Liquid filters) to provide optimized performance by utilizing MemCached.
 
 signature-on-black-without-filters
 ----------------------------------
