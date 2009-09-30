@@ -47,30 +47,24 @@ In all pages, you have access to the follow variables:
     * *artist_statement*
     * _photos_ - array of photos
     * *friendly_id* - url format of this portfolio
-    
   * _user_
     * _login_, _email_, *site_title*, *site_description*, _agent_, _bio_, _phone_, _blog_, *friendly_id*, *custom_domain*
     * *has_blog?*, *has_agent?*, *has_phone?* - returns true if you have entered blog, agent, and phone, respectively in account info
-    
   * _photos_ - essentially the same as portfolio.photos, you would typically use a for loop to list all of them in *portfolio.liquid*, each of these photos contains:
     * _title_ - title of image
     * _description_ - photo description
     * _photopage_url_ - this is the URL to the Flickr photopage, to satisfy (Flickr's guidelines)[http://www.flickr.com/guidelines.gne], you must include a link back to Flickr when you display any image off of Flickr
     * *url_square*, *url_thumbnail*, *url_small*, *url_medium*, *url_original* - URLs to different sizes of the image
     * *url_large* - provides URL to the large size image if available, otherwise, it returns URL to the medium
-
   * in _contact.liquid_, you have access to:
     * *@contact_form* - if you display this instance variable it will include a email contact form, you can style it with CSS if you so desire
-    
   * in _about.liquid_, you have access to:
     * *@buddy_icon* - this is the URI of your Flickr buddy icon
 
 Available Liquid filters
 ------------------------
   * *display_galleriffic(portfolio)* - display [gallerrific](http://www.twospy.com/galleriffic/) code block for a given portfolio, you invoke this by
-  
       { portfolio | display_galleriffic }
-    
   * *asset_url(asset)* - this provides a URI to something in the assets folder
   * *link_to_page*, *link_to_portfolio* - provides links to page or portfolio, see _header.liquid for how to use them
   
