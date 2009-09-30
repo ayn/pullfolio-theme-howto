@@ -1,11 +1,9 @@
 Pullfolio.com Themes Howto
 ================================
-
-This repository contains examples of how [Pullfolio](http://pullfolio.com) custom themes. After upgrading to a **trial** or purchasing a **pro** subscription, you will be able to clone one of the provided themes and modify from there, or create a new theme from scratch (only recommended for experts!). You have complete control of the look and feel of your Pullfolio site by customizing the theme files.
+This repository contains examples of how [Pullfolio](http://pullfolio.com) custom themes work. After upgrading to a **trial** or purchasing a **pro** subscription, you will be able to clone one of the provided themes and modify from there, or create a new theme from scratch (only recommended for experts!). You have complete control of the look and feel of your Pullfolio site by customizing the theme files.
 
 Overview on theme directory structure
 -------------------------------------
-
 <pre>
 [theme name]
    |__ assets
@@ -17,13 +15,13 @@ The _assets_ folder contains your CSS stylesheets:
 
   * _style.css_ - this is loaded for all browsers, and should contain most of the CSS for your theme
   * _ie.css_ - this is loaded for all versions of Internet Explorer
-  * _ie6.css_ - this is loaded for IE6 or lower
+  * _ie6.css_ - this is loaded for IE6 and lower
 
 The _layouts_ folder contains 3 partials:
 
   * __footer.liquid_ - this is the footer of your site
   * __header.liquid_ - header
-  * __sidebar.liquid_ - sidebar, this is empty is most of the default Pullfolio themes
+  * __sidebar.liquid_ - sidebar, this is empty in most of the default Pullfolio themes
 
 The _templates_ folder contains templates for your site:
 
@@ -55,6 +53,8 @@ In all pages, you have access to the follow variables:
 
   * in _contact.liquid_, you have access to:
     * *@contact_form* - if you display this instance variable it will include a email contact form, you can style it with CSS if you so desire
+  * in _about.liquid_, you have access to:
+    * *@buddy_icon* - this is the URI of your Flickr buddy icon
 
 Available Liquid filters
 ------------------------
@@ -71,12 +71,10 @@ Example Themes
 
 signature-on-black
 ------------------
-
-This is the actual code of our Signature on Black default theme, it uses our helpers (Liquid filters to be exact) to provide optimized performance by utility MemCached. 
+This is the code of our _Signature on Black_ theme, it uses our helpers (aka Liquid filters) to provide optimized performance by utility MemCached.
 
 signature-on-black-without-filters
 ----------------------------------
-
 This is the same signature-on-black theme with a re-written _portfolio.liquid_ to show how to go through the photos of the portfolio to generate the HTML block:
 
     <div id="thumbs">
@@ -97,7 +95,6 @@ This is the same signature-on-black theme with a re-written _portfolio.liquid_ t
       </ul>
     </div>
   
-
 Useful links
 ============
   * [Liquid Templating Language](http://www.liquidmarkup.org/) - you can learn all about Liquid here
