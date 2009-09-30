@@ -67,7 +67,7 @@ In all pages, you have access to the follow variables:
 
 Available Liquid filters
 ------------------------
-  * *display_galleriffic(portfolio)* - display [gallerrific](http://www.twospy.com/galleriffic/) code black for a given portfolio, you invoke this by
+  * *display_galleriffic(portfolio)* - display [gallerrific](http://www.twospy.com/galleriffic/) code block for a given portfolio, you invoke this by
   
       { portfolio | display_galleriffic }
     
