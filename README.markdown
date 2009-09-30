@@ -53,6 +53,7 @@ In all pages, you have access to the follow variables:
 
   * in _contact.liquid_, you have access to:
     * *@contact_form* - if you display this instance variable it will include a email contact form, you can style it with CSS if you so desire
+    
   * in _about.liquid_, you have access to:
     * *@buddy_icon* - this is the URI of your Flickr buddy icon
 
@@ -65,10 +66,8 @@ Available Liquid filters
   * *asset_url(asset)* - this provides a URI to something in the assets folder
   * *link_to_page*, *link_to_portfolio* - provides links to page or portfolio, see _header.liquid for how to use them
   
-  
 Example Themes
 ==============
-
 signature-on-black
 ------------------
 This is the code of our _Signature on Black_ theme, it uses our helpers (aka Liquid filters) to provide optimized performance by utility MemCached.
