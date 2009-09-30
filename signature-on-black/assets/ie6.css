@@ -1,0 +1,3 @@
+body #content .bottom.pagination a.first{left:0px;}
+body #content .bottom.pagination a.last{right:4px;}
+body #header ul#top_nav li ul li { display: inline; }

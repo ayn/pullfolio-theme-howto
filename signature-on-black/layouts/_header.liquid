@@ -1,0 +1,51 @@
+<ul id='top_nav' class='dropdown'>
+  <li id='portfolios'>
+    Portfolios
+    <ul id='portfolios_list'>
+    {% for p in portfolios %}
+      <li>{{ p | link_to_portfolio }}</li>
+    {% endfor %}
+    </ul>
+  </li>
+  <li>
+    {{ 'about' | link_to_page }}
+  </li>
+  <li>
+    {{ 'contact' | link_to_page }}
+  </li>
+  {% if  user.has_blog? %}
+    <li><a href="{{ user.blog }}">Blog</a></li>
+  {% endif %}
+</ul>
+
+<h1>
+  <a href="/">{{ user.site_title }}</a>
+</h1>
+
+<script type='text/javascript'>
+$(function(){
+
+  var config = {
+    sensitivity: 3, // number = sensitivity threshold (must be 1 or higher)    
+    interval: 200,  // number = milliseconds for onMouseOver polling interval    
+    over: doOpen,   // function = onMouseOver callback (REQUIRED)    
+    timeout: 200,   // number = milliseconds delay before onMouseOut    
+    out: doClose    // function = onMouseOut callback (REQUIRED)    
+  };
+
+  function doOpen() {
+    $(this).addClass("hover");
+    $('ul:first',this).css('visibility', 'visible');
+    $('ul:first',this).slideDown()
+  }
+
+  function doClose() {
+    $(this).removeClass("hover");
+    // $('ul:first',this).css('visibility', 'hidden');
+    $('ul:first',this).slideUp()
+  }
+
+  $("ul.dropdown li").hoverIntent(config);
+  $("ul.dropdown li ul li:has(ul)").find("a:first").append(" &raquo; ");
+});
+</script>

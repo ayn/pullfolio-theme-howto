@@ -1,0 +1,44 @@
+<div class='page' id='contact'>
+  <h3>Contact Info</h3>
+  {% if @user.has_phone? %}
+    <div id='phone'>
+      <div class='contact_title'>
+        {{ 'theme/phone.png' | image_tag }}
+      </div>
+      <div class='contact_value'>
+        {{ @user.phone }}
+      </div>
+    </div>
+  {% endif %}
+  
+  {% if @user.has_blog? %}
+    <div id='blog'>
+      <div class='contact_title'>
+        {{ 'theme/link.png' | image_tag }}
+      </div>
+      <div class='contact_value'>
+        <a href='{{ @user.blog }}'>{{ @user.blog }}</a>
+      </div>
+    </div>
+  {% endif %}
+  
+  {% if @user.has_agent? %}
+    <div id='agent'>
+      <div class='contact_title'>
+        {{ 'theme/user_suit.png' | image_tag }}
+      </div>
+      <div class='contact_value'>
+        Agent:<br/>
+        {{ @user.agent }}
+      </div>
+    </div>
+  {% endif %}
+  
+  <h3>Send Inquiry</h3>
+  <div id='contact_form'>
+    {{ @contact_form }}
+    <div id='spinner' class='hidden'><img src="/images/trans-spinner.gif"></div>
+    <div id='error' class='hidden'></div>
+    <div id='success' class='hidden'>Message successfully sent!</div>
+  </div>
+</div>

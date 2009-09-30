@@ -1,0 +1,125 @@
+{% if  portfolio %}
+
+<div id="gallery">
+  <div id="loading">
+    <img src="/images/spinner.gif" alt="Loading..."/>
+  </div>
+  <div id="slideshow">
+  </div>
+  <div id="controls"></div>
+  <div id="caption"></div>
+  <div id="thumbs">
+    <ul class="thumbs noscript">
+      {% for photo in photos %}
+        <li>
+          <a class="thumb" href="{{ photo.url_l || photo.url_medium }}" title="{{ photo.title }}">
+            <img src="{{ photo.url_square }}" alt="{{ photo.title }}" />
+          </a>
+          <div class="caption">
+            <div class="flickr-link">
+              <a href="{{ photo.photopage_url }}" target="_blank" title="Go to Flickr page of this photo">Flickr link</a>
+            </div>
+            <div class="title">{{ portfolio.name }} : {{ photo.title )}}</div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // We only want these styles applied when javascript is enabled
+  $('div.navigation').css({'width' : '300px', 'float' : 'left'});
+  $('div.content').css('display', 'block');
+
+  // Initially set opacity on thumbs and add
+  // additional styling for hover effect on thumbs
+  var onMouseOutOpacity = 0.67;
+  $('#thumbs ul.thumbs li').css('opacity', onMouseOutOpacity)
+  .hover(
+    function () {
+      $(this).not('.selected').fadeTo('fast', 1.0);
+    }, 
+    function () {
+      $(this).not('.selected').fadeTo('fast', onMouseOutOpacity);
+    }
+  );
+  var gallery = $('#gallery').galleriffic('#thumbs', {
+    delay:                  5000,
+    numThumbs:              10,
+    preloadAhead:           10,
+    enableTopPager:         false,
+    enableBottomPager:      true,
+    imageContainerSel:      '#slideshow',
+    controlsContainerSel:   '#controls',
+    captionContainerSel:    '#caption',
+    loadingContainerSel:    '#loading',
+    renderSSControls:       true, // Specifies whether the slideshow's Play and Pause links should be rendered
+    renderNavControls:      true, // Specifies whether the slideshow's Next and Previous links should be rendered
+    playLinkText:           '<img src=\'/images/theme/control_play.png\' title=\'Start slideshow\' alt=\'Start slideshow\'/>',
+    pauseLinkText:          '<img src=\'/images/theme/control_pause.png\' title=\'Pause\' alt=\'Pause\'/>',
+    prevLinkText:           '',
+    nextLinkText:           '',
+    nextPageLinkText:       '&rsaquo;',
+    prevPageLinkText:       '&lsaquo;',
+    enableHistory:          true,  // Specifies whether the url's hash and the browser's history cache should update when the current slideshow image changes 
+    autoStart:              false,  // Specifies whether the slideshow should be playing or paused when the page first loads 
+    onChange:               function(prevIndex, nextIndex) {
+      $('#thumbs ul.thumbs').children()
+      .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+      .eq(nextIndex).fadeTo('fast', 1.0);
+      $('.bottom.pagination a').attr('title', '');
+      $('a.play').attr('title', '');
+      $('a.pause').attr('title', '');
+    },
+    onTransitionOut:        function(callback) {
+      $('#caption').fadeTo('fast', 0.0);
+      $('#slideshow').fadeTo('fast', 0.0, callback);
+    },
+    onTransitionIn:         function() {
+      scale_image();
+      $('#slideshow').fadeTo('fast', 1.0);
+      $('#caption').fadeTo('fast', 1.0);
+      $('.bottom.pagination a').attr('title', '');
+      $('a.play').attr('title', '');
+      $('a.pause').attr('title', '');
+      $('.bottom.pagination *:first').addClass("first");
+      $('.bottom.pagination *:last').addClass("last");
+    },
+    onPageTransitionOut:    function(callback) {
+      $('#thumbs ul.thumbs').fadeTo('fast', 0.0, callback);
+    },
+    onPageTransitionIn:     function() {
+      $('#thumbs ul.thumbs').fadeTo('fast', 1.0);
+      $('.bottom.pagination a').attr('title', '');
+      $('.bottom.pagination *:first').addClass("first");
+      $('.bottom.pagination *:last').addClass("last");
+    }
+  });
+  $('#thumbs').fadeIn();
+  $('body').css('overflow','auto');
+});
+
+function scale_image() {
+  var image = $('#slideshow img');
+  var height = 500;
+  image.width(image.width() * height / image.height());
+  image.height(height);
+}
+</script>
+
+{% else %}
+
+<div id='nofolio'>
+  You don't have a portfolio to show yet, {{ 'go create one' | create_my_portfolio_url}} and it will show up here!
+</div>
+
+{% endif %}
+
+<noscript>
+  <style>
+    body{overflow:auto;}
+    body #content #thumbs{display:block;}
+  </style>
+</noscript>
