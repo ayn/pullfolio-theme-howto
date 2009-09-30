@@ -77,7 +77,26 @@ This is the actual code of our Signature on Black default theme, it uses our hel
 signature-on-black-without-filters
 ----------------------------------
 
-This is the same signature-on-black theme with a re-written _portfolio.liquid_ to show how to go through the photos of the portfolio to generate the HTML block.
+This is the same signature-on-black theme with a re-written _portfolio.liquid_ to show how to go through the photos of the portfolio to generate the HTML block:
+
+    <div id="thumbs">
+      <ul class="thumbs noscript">
+        {% for photo in photos %}
+          <li>
+            <a class="thumb" href="{{ photo.url_large }}" title="{{ photo.title }}">
+              <img src="{{ photo.url_square }}" alt="{{ photo.title }}" />
+            </a>
+            <div class="caption">
+              <div class="flickr-link">
+                <a href="{{ photo.photopage_url }}" target="_blank" title="Go to Flickr page of this photo">Flickr link</a>
+              </div>
+              <div class="title">{{ portfolio.name }} : {{ photo.title )}}</div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  
 
 Useful links
 ============
