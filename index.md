@@ -20,4 +20,11 @@ A: For custom domain to work, you must update your domain records to setup a **C
 **Q: How do I link my Flickr account with Pullfolio?**  
 A: You typically link your accounts upon signup, if you want to do it again, go to [http://pullfolio.com/oauth_consumers/flickr/](http://pullfolio.com/oauth_consumers/flickr/)
 
+**Q: My new photos are not showing up at my site!**  
+A: This is because we cache the portfolio photos for 24 hours, you can manually refresh the cache with the *Refresh Cache* link in your [Portfolio admin page](http://pullfolio.com/portfolios/admin).
+
+**Q: Do private photos show up in my site?**  
+A: Yes they do! If you don't want a photo to appear on the site, don't tag it (if you setup your portfolio to pull from tag) or include it in the photoset (if you're pulling from a photoset).
+
+
 _More soon..._
