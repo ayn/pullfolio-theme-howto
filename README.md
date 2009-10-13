@@ -1,6 +1,6 @@
 Pullfolio.com Themes Howto
 ================================
-This repository provides information of how [Pullfolio](http://pullfolio.com) custom themes work. After upgrading to a **trial** or purchasing a **pro** subscription, you will be able to clone one of the provided themes and modify from there, or create a new theme from scratch (only recommended for experts!). You have complete control of the look and feel of your Pullfolio site by customizing the theme files.
+This repository provides information of how [Pullfolio](http://pullfolio.com) custom themes work. After upgrading to a **trial** or purchasing a **pro** subscription, you will be able to clone one of the provided themes and modify from there. You have complete control of the look and feel of your Pullfolio site by customizing the theme files.
 
 Overview on theme directory structure
 -------------------------------------
@@ -25,6 +25,7 @@ The _layouts_ folder contains 3 partials:
 
 The _templates_ folder contains templates for your site:
 
+  * _index.liquid_ - this is the index page of your pullfolio site (i.e., when you hit http://yoursite.com), if this file doesn't exist, we will render your main portfolio
   * _about.liquid_ - this is the information displayed in the About page (http://yoursite.com/about)
   * _contact.liquid_ - this should contain contact info, the *@contact_form* instance variable contains a default contact form for you to receive email inquiries
   * _portfolios.liquid_ - this is rendered at http://yoursite.com/portfolios, if you want to have a page that display all (or a selection of) your portfolios, if you create one, you should add a link to this in __header.liquid_
